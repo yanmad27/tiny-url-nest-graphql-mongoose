@@ -1,0 +1,67 @@
+.container {
+    padding: 5% 20%;
+    display: flex;
+    gap: 12px;
+    flex-direction: column;
+}
+.shortenUrl {
+    padding: 12px;
+    background: #f0f0f0;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    cursor: pointer;
+    width: fit-content;
+    font-style: italic;
+}
+.form {
+    display: flex;
+    gap: 12px;
+}
+.copy {
+    font-size: 10px;
+    font-style: italic;
+    color: #858484;
+}
+
+.links {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.link {
+    display: flex;
+    gap: 12px;
+    align-items: baseline;
+    justify-content: space-between;
+}
+.link:first-child .href {
+    font-weight: bold;
+    font-style: normal;
+}
+.href {
+    display: flex;
+    align-items: flex-start;
+    color: gray;
+    font-size: 14px;
+    font-style: italic;
+    word-break: break-all;
+    min-width: 100px;
+}
+
+.href:last-child {
+    width: 150px;
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-end;
+}
+
+.pageLink {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: unset;
+    color: #00aff4;
+}
