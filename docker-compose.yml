@@ -1,0 +1,42 @@
+# Copyright VMware, Inc.
+# SPDX-License-Identifier: APACHE-2.0
+
+version: '2'
+
+volumes:
+  database-data:
+  back-end-data:
+
+services:
+  database:
+    image: docker.io/bitnami/mongodb:6.0
+    ports:
+      - '27017:27017'
+    volumes:
+      - 'database-data:/bitnami/mongodb'
+    environment:
+      - MONGODB_ROOT_PASSWORD=${MONGODB_ROOT_PASSWORD}
+    restart: always
+
+  back-end:
+    build: ./back-end
+    ports:
+      - '6011:8080'
+    volumes:
+      - 'back-end-data:/go/public'
+    env_file:
+      - ./back-end/.env
+    environment:
+      - MONGO_HOST=database
+      - MONGO_PORT=27017
+    depends_on:
+      - database
+    restart: always
+
+  front-end:
+    build: ./portfolio
+    ports:
+      - '6010:3000'
+    depends_on:
+      - back-end
+    restart: always
