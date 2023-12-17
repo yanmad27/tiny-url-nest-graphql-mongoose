@@ -7,6 +7,7 @@ import { AppResolver } from 'src/app/app.resolver';
 import { AppService } from 'src/app/app.service';
 import { DatabaseModule } from 'src/database/database.module';
 import { UserModule } from 'src/modules/user/user.module';
+import { OAuthModule } from 'src/oauth/oauth.module';
 
 @Module({
 	imports: [
@@ -16,6 +17,7 @@ import { UserModule } from 'src/modules/user/user.module';
 			autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
 			playground: true,
 		}),
+		OAuthModule,
 		DatabaseModule,
 		UserModule,
 		// UrlModule,

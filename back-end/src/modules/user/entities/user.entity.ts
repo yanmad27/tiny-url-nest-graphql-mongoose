@@ -10,7 +10,15 @@ export class User {
 
 	@Field(() => String)
 	@Prop()
-	name: string;
+	firstName: string;
+
+	@Field(() => String)
+	@Prop()
+	lastName: string;
+
+	@Field(() => String)
+	@Prop()
+	picture: string;
 
 	@Field(() => String)
 	@Prop({ unique: true })
@@ -22,7 +30,7 @@ export class User {
 
 	@Field(() => String)
 	@Prop()
-	address: string;
+	from: string;
 }
 
 export type UserDocument = User & Document;

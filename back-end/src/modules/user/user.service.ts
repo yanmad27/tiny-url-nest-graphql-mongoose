@@ -11,9 +11,9 @@ export class UserService {
 	findAll() {
 		return this.userRepository.findAll();
 	}
-	// findOne(id: string) {
-	// 	return this.userModel.collection.findOne({ _id: new mongoose.Types.ObjectId(id) });
-	// }
+	findOne(email: string) {
+		return this.userRepository.findOneByCondition({ email });
+	}
 	// update(id: number, updateUserInput: UpdateUserInput) {
 	// 	return `This action updates a #${id} user`;
 	// }
